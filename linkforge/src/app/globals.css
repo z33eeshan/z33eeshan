@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink-50: #f6f7f9;
+  --color-ink-100: #eceef2;
+  --color-ink-200: #d5dae2;
+  --color-ink-300: #b0b9c7;
+  --color-ink-400: #8492a6;
+  --color-ink-500: #64748b;
+  --color-ink-600: #4c5768;
+  --color-ink-700: #3d4655;
+  --color-ink-800: #2b3240;
+  --color-ink-900: #1a1f28;
+  --color-ink-950: #11141a;
+}
+
+:root {
+  color-scheme: light dark;
+}
+
+body {
+  background: var(--color-ink-50);
+  color: var(--color-ink-900);
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: var(--color-ink-950);
+    color: var(--color-ink-100);
+  }
+}
+
+/* Wide tables scroll inside their own container rather than pushing the page. */
+.table-scroll {
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+/*
+ * Chart palette. Three categorical slots, validated for colour-vision
+ * deficiency separation and contrast against both surfaces. Referenced by role
+ * so the dark steps swap in one place — they are chosen for the dark surface,
+ * not an automatic inversion of the light ones.
+ */
+.viz-root {
+  --surface-1: #fcfcfb;
+  --viz-grid: #e6e7ea;
+  --viz-axis: #8492a6;
+  --viz-text: #3d4655;
+  --series-1: #2a78d6;
+  --series-2: #eb6834;
+  --series-3: #1baf7a;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:where(:not([data-theme="light"])) .viz-root {
+    --surface-1: #1a1a19;
+    --viz-grid: #2b3240;
+    --viz-axis: #64748b;
+    --viz-text: #b0b9c7;
+    --series-1: #3987e5;
+    --series-2: #d95926;
+    --series-3: #199e70;
+  }
+}
+
+:root[data-theme="dark"] .viz-root {
+  --surface-1: #1a1a19;
+  --viz-grid: #2b3240;
+  --viz-axis: #64748b;
+  --viz-text: #b0b9c7;
+  --series-1: #3987e5;
+  --series-2: #d95926;
+  --series-3: #199e70;
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}

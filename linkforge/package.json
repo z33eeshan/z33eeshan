@@ -1,0 +1,44 @@
+{
+  "name": "linkforge",
+  "version": "0.1.0",
+  "private": true,
+  "description": "All-in-one backlink engine: audit, prospecting, verification and outreach.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "db:migrate": "tsx scripts/migrate.ts",
+    "ranks:import": "tsx scripts/import-domain-ranks.ts",
+    "worker": "tsx scripts/worker.ts",
+    "test": "node --test --import tsx test/*.test.ts"
+  },
+  "dependencies": {
+    "@tanstack/react-table": "^8.21.3",
+    "better-sqlite3": "^11.10.0",
+    "cheerio": "^1.0.0",
+    "googleapis": "^144.0.0",
+    "next": "^15.3.4",
+    "p-limit": "^6.2.0",
+    "psl": "^1.15.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "recharts": "^2.15.4",
+    "zod": "^3.25.67"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.11",
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^22.15.0",
+    "@types/psl": "^1.1.3",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "tailwindcss": "^4.1.11",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3"
+  },
+  "engines": {
+    "node": ">=20.9"
+  }
+}
