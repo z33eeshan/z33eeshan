@@ -1,0 +1,4 @@
+{
+  "//": "Marks the test directory as ESM so tsx allows top-level await in tests. The app itself stays CommonJS-compatible for better-sqlite3.",
+  "type": "module"
+}
